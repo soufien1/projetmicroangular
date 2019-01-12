@@ -1,0 +1,54 @@
+<nav class="navbar navbar-success">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"
+        aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#">
+        <img src="assets/img/logo.png" height="50px" width="120px">
+
+
+      </a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li routerLinkActive="active"><a routerLink="citoyen-list">Liste des Citoyens</a></li>
+        <li routerLinkActive="active"><a routerLink="obtenir-b3">Obtenir Une B3</a></li>
+        <li routerLinkActive="active"><a routerLink="releve-cnam">Consulter mes Relevés CNAM</a></li>
+      </ul>
+
+      <ul class="nav navbar-nav navbar-right">
+
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+
+<div class="container scroll">
+  <div class="row">
+    <router-outlet></router-outlet>
+  </div>
+</div>
+
+<footer class="navbar-default navbar-fixed-bottom">
+  <div class="container-fluid">
+
+    <div class="row">
+      <div class="col-xs-12" style="background-color:#DDD;text-align: center">
+        <br>
+        <p>Powred By : Firas Chtara & Soufien Mhedhbi</p>
+        <p>Want me to help develop your next project or application</p>
+        <a class="btn btn-success space-above" href="#">Contact Us</a>
+        <br>
+        <br>
+      </div>
+    </div>
+  </div>
+</footer>

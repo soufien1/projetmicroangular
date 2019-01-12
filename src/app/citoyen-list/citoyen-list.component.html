@@ -1,0 +1,93 @@
+<div class="col-md-12">
+
+  <label for="exampleInputPassword1"></label>
+  <div class="container">
+
+
+
+    <div class="row">
+      <div class="col-md-12 spacer">
+        <div class="form-inline">
+          <div class="form-group">
+            <label class="sr-only" for="exampleInputAmount"></label>
+            <div class="input-group">
+              <input type="text" [(ngModel)]="chercher" id="textrecherche" class="form-control" id="exampleInputAmount" placeholder="Recherche">
+            </div>
+          </div>
+          <button type="button" class="btn btn-primary" (click)="rechercher()">Chercher</button>
+          <button routerLink="/citoyen-form" type="button" class="btn btn-success">Ajouter</button>
+          <button type="button"  style="visibility:hidden;" class="btn btn-primary" (load)="rechercher()" >Chercher</button>
+
+        </div>
+      </div>
+    </div>
+
+
+
+
+
+
+    
+    <div class="row">
+      <div class="col-xs-12">
+
+        <div class="panel panel-primary">
+          <!-- Default panel contents -->
+          <div class="panel-heading">Liste des Citoyens </div>
+
+        <table class="table table-striped table-bordered table-hover table-responsive" >
+          <thead>
+            <tr>
+              <th>Id</th>
+              <th>Nom</th>
+              <th>Prénom</th>
+              <th>Date Naissance</th>
+              <th>CIN</th>
+              <th>Adresse Email</th>
+              <th>Revenu Annuel</th>
+              <th>Option</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let c of pageCitoyens?.content">
+
+              <td>{{c.id}}</td>
+              <td>{{c.nom}}</td>
+              <td>{{c.prenom}}</td>
+              <td>{{c.datenaissance}}</td>
+              <td>{{c.cin}}</td>
+              <td>{{c.adressmail}}</td>
+              <td>{{c.revenuannuel}}</td>
+              <td style="text-align: center">
+                <button (click)="onEditCitoyen(c.id)" class="clickable btn-primary">Modifier</button>
+                <button (click)="onDeleteCitoyen(c)" class="clickable btn-danger">Supprimer</button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <div class="container">
+          <ul class="pager">
+            <li [ngClass]="{'active':i==page}" *ngFor="let p of pages; let i=index">
+              <a class="clickable" (click)="suivant(i)">{{i}}</a></li>
+          </ul>
+        </div>
+
+
+        </div>
+      </div>
+
+    </div>
+
+    <div class="row">
+      
+    </div>
+
+  </div>
+
+</div>
+
+<div class="container">
+  <div class="row">
+    <router-outlet></router-outlet>
+  </div>
+</div>

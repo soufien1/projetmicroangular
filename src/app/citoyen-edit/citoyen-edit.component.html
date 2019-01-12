@@ -1,0 +1,96 @@
+<style>
+  .dxeRequiredMark_Glass {
+    color: rgb(205, 5, 5);
+    font-style: normal;
+  }
+</style>
+
+<div *ngIf="mode==1">
+  <div class="panel panel-primary">
+
+    <div class="panel-heading">Veuillez Modifier les informations de citoyen :</div>
+
+    <div class="panel-body">
+  <form  >
+
+    <div class="form-group">
+      <label >Nom : <em class="dxeRequiredMark_Glass">*</em></label>
+      <input type="text"  class="form-control"   placeholder="Veuillez saisir votre nom " [(ngModel)]="citoyen.nom" [ngModelOptions]="{standalone: true}"/>
+    </div>
+    <div class="form-group">
+      <label for="exampleInputPrenom">Prénom : <em class="dxeRequiredMark_Glass">*</em></label>
+      <input type="text"  class="form-control" placeholder="Veuillez saisir votre Prénom" [(ngModel)]="citoyen.prenom" [ngModelOptions]="{standalone: true}"/>
+    </div>
+    <form>
+      <div>
+        <label for="bday">Veuillez saisir votre date de Naissance : <em class="dxeRequiredMark_Glass">*</em></label><br>
+        <input type="date"  class="form-control"  name="bday"  [(ngModel)]="citoyen.datenaissance" [ngModelOptions]="{standalone: true}"/>
+      </div>
+    </form>
+    <div class="form-group">
+      <label for="exampleInputCIN">CIN : <em class="dxeRequiredMark_Glass">*</em></label>
+      <input type="text"  class="form-control"  placeholder="Veuillez saisir votre CIN" [(ngModel)]="citoyen.cin" [ngModelOptions]="{standalone: true}"/>
+    </div>
+    <div class="form-group">
+      <label for="exampleInputEmail1">Adresse électronique : <em class="dxeRequiredMark_Glass">*</em></label>
+      <input type="email"  class="form-control"   placeholder="Veuillez saisir votre email" [(ngModel)]="citoyen.adressmail" [ngModelOptions]="{standalone: true}"/>
+      <small  class="form-text text-muted"></small>
+    </div>
+    <div class="form-group">
+      <label for="exampleInputRevenu">Revenu Annuel : <em class="dxeRequiredMark_Glass">*</em> </label>
+      <input type="text"  class="form-control"  placeholder="Veuillez saisir votre Revenu Annuel" [(ngModel)]="citoyen.revenuannuel" [ngModelOptions]="{standalone: true}"/>
+    </div>
+    <button type="submit" routerLink="/citoyen-list" class="btn btn-primary navbar-right" style="margin-right: 2px">Annuler</button>
+
+    <button type="submit" (click)="updateCitoyen()" class="btn btn-success navbar-right" style="margin-right: 5px">Enregistrer</button>
+    
+    </form>
+    </div>
+  </div>
+
+
+
+</div>
+  
+  
+  
+  
+  
+  
+  <div *ngIf="mode==2">
+      <h2> confirmation</h2>
+    <form  >
+        <div class="form-group">
+            <label >ID</label>
+            <label for="">{{citoyen.id}}</label>
+          </div>
+          <div class="form-group">
+            <label >Nom</label>
+            <label for="">{{citoyen.nom}}</label>
+          </div>
+          <div class="form-group">
+            <label for="exampleInputPrenom">Prénom</label>
+            <label for="">{{citoyen.prenom}}</label>
+          </div>
+          <form>
+              <div>
+                <label for="bday"> date de naissance :</label><br>
+                <label for="">{{citoyen.datenaissance}}</label>
+              </div>
+            </form>
+          <div class="form-group">
+              <label for="exampleInputCIN">CIN</label>
+              <label for="">{{citoyen.cin}}</label>
+            </div>
+            <div class="form-group">
+                <label for="exampleInputEmail1">Email address</label>
+                <label for="">{{citoyen.adressmail}}</label>
+              </div>
+            <div class="form-group">
+                <label for="exampleInputRevenu">Revenu Annuel</label>
+                <label for="">{{citoyen.revenuannuel}}</label>
+              </div>
+          <button type="submit" (click)="mode=1" class="btn btn-primary">Ajouter</button>
+        
+        </form>
+      </div>

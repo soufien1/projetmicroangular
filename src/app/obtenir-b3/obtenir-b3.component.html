@@ -1,0 +1,178 @@
+<div class="col-md-12">
+
+
+  <div class="container">
+
+
+
+    <div class="row" id="rowsearch">
+      <div class="col-md-12 spacer">
+        <div class="form-inline">
+          <div class="form-group">
+            <label class="sr-only" for="exampleInputAmount"></label>
+            <div class="input-group">
+              <input type="text" [(ngModel)]="cin" id="textrecherche" class="form-control" id="exampleInputAmount"
+                placeholder="Recherche">
+            </div>
+          </div>
+          <button type="button" class="btn btn-primary" (click)="rechercher()">Chercher</button>
+
+
+        </div>
+      </div>
+    </div>
+
+
+
+
+
+
+
+    <div class="row" >
+      <div class="col-xs-12">
+
+
+        <!-- Default panel contents -->
+
+
+
+        <body style="padding:5px">
+
+          <div class="panel panel-info" >
+            <div class="panel-heading" ><b><u>Détails Bulletin №3 :</u></b></div>
+            <div class="panel-body">
+
+              <div *ngIf="error" class="alert alert-danger" role="alert">
+                <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+                <span class="sr-only">Error:</span>
+                Veuillez saisir une CIN Valide !
+              </div>
+
+              <table *ngIf="loaded" style="width:100%"   >
+
+                <tr>
+                  <td colspan="4">
+                    <div style="border-bottom: 1px Solid #c0c0c0; text-align: left; font-size: 12px; font-weight: bold; color: GrayText;">
+                      Informations générales :
+                    </div>
+                  </td>
+                </tr>
+
+                <tr>
+                  <td style="width:25%" class="label_td">Nom : </td>
+                  <td style="width:25%"><input type="text" style="width:100%" disabled [(ngModel)]="b3.citoyens.nom"
+                      class="form-control" id="txtNom" /></td>
+                  <td style="width:25%" class="label_td">Prénom : </td>
+                  <td style="width:25%"><input type="text" style="width:100%" disabled [(ngModel)]="b3.citoyens.prenom"
+                      class="form-control" id="txtPrenom" /></td>
+
+                </tr>
+                <tr>
+                  <td style="width:25%" class="label_td">Profession : </td>
+                  <td style="width:25%"><input type="text" style="width:100%" disabled [(ngModel)]="b3.citoyens.profession"
+                      class="form-control" id="txtProfession" /></td>
+                  <td style="width:25%" class="label_td">Date de Naissance : </td>
+                  <td style="width:25%"><input type="text" style="width:100%" disabled [(ngModel)]="b3.citoyens.datenaissance"
+                      class="form-control" id="txtDateNaissance" /></td>
+
+                </tr>
+
+
+                <tr>
+                  <td style="width:25%" class="label_td">Nom pére : </td>
+                  <td style="width:25%"><input type="text" style="width:100%" disabled [(ngModel)]="b3.citoyens.prenomPere"
+                      class="form-control" id="txtNomPere" /></td>
+                  <td style="width:25%" class="label_td">Nom Grand pére : </td>
+                  <td style="width:25%"><input type="text" style="width:100%" disabled [(ngModel)]="b3.citoyens.prenomGpere"
+                      class="form-control" id="txtGNomPere" /></td>
+                </tr>
+                <tr>
+                  <td style="width:25%" class="label_td">Nom mére : </td>
+                  <td style="width:25%"><input type="text" style="width:100%" disabled [(ngModel)]="b3.citoyens.nomMere"
+                      class="form-control" id="txtNomMere" /></td>
+                  <td style="width:25%" class="label_td">Prénom mére : </td>
+                  <td style="width:25%"><input type="text" style="width:100%" disabled [(ngModel)]="b3.citoyens.prenomMere"
+                      class="form-control" id="txtPrenomMere" /></td>
+                </tr>
+                <tr>
+                  <td style="width:25%" class="label_td">CIN : </td>
+                  <td style="width:25%"><input type="text" style="width:100%" disabled [(ngModel)]="b3.citoyens.cin"
+                      class="form-control" id="txtCIN" /></td>
+
+                </tr>
+
+
+                <tr>
+                  <td colspan="4">
+                    <div style="border-bottom: 1px Solid #c0c0c0; text-align: left; font-size: 12px; font-weight: bold; color: GrayText;">
+                      Casier judiciaire :
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td style="width:25%" class="label_td">Nature des peines : </td>
+                  <td style="width:25%"><input type="text" style="width:100%" disabled [(ngModel)]="b3.datecond" class="form-control"
+                      id="txtNaturepeines" /></td>
+                  <td style="width:25%" class="label_td">Nature infraction : </td>
+                  <td style="width:25%"><input type="text" style="width:100%" disabled [(ngModel)]="b3.natureinfra"
+                      class="form-control" id="txtNatureinfraction" /></td>
+                </tr>
+
+                <tr>
+                  <td style="width:25%" class="label_td">Date condamnation : </td>
+                  <td style="width:25%"><input type="text" style="width:100%" disabled [(ngModel)]="b3.naturepeines"
+                      class="form-control" id="txtDateCondamnation" /></td>
+                  <td style="width:25%" class="label_td">Tribunaux : </td>
+                  <td style="width:25%"><input type="text" style="width:100%" disabled [(ngModel)]="b3.tribunaux" class="form-control"
+                      id="txtTribunaux" /></td>
+                </tr>
+                <tr>
+                  <td colspan="4">
+                    <div style="border-bottom: 1px Solid #c0c0c0; text-align: left; font-size: 12px; font-weight: bold; color: GrayText;">
+                      Description / Autre Informations :
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td colspan="4">
+                    <textarea class="form-control" disabled [(ngModel)]="b3.description" id="textAreaDescription" rows="3"></textarea>
+
+                  </td>
+                </tr>
+                <tr>
+                  <td style="text-align: right" colspan ="4" >
+
+                    <button type="button" id="butonprint" class="btn btn-primary" style="margin-top: 5px"
+                      OnClick="window.print()">imprimer</button>
+                      
+                  </td>
+                </tr>
+              </table>
+
+
+
+
+            </div>
+          </div>
+
+        </body>
+
+
+
+      </div>
+
+    </div>
+
+    <div class="row">
+
+    </div>
+
+  </div>
+
+</div>
+
+<div class="container">
+  <div class="row">
+    <router-outlet></router-outlet>
+  </div>
+</div>

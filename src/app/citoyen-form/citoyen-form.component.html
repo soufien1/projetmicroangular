@@ -1,0 +1,60 @@
+<link rel="stylesheet" href="assets/forms.css">
+
+
+<style xmlns="">
+  .dxeRequiredMark_Glass {
+    color: rgb(205, 5, 5);
+    font-style: normal;
+  }
+</style>
+
+
+  <div class="panel panel-primary">
+
+    <div class="panel-heading">Veuillez saisir les informations de citoyens ainsi que son Revenu Annuel :</div>
+
+    <div class="panel-body">
+
+
+      <form #f="ngForm" (ngSubmit)="onSaveCitoyen(f.value)"  >
+  
+        <div class="form-group">
+            <label class="espace" >Nom : <em class="dxeRequiredMark_Glass">*</em></label>
+          <input type="text"  class="form-control"   placeholder="Veuillez saisir votre nom" ngModel name="nom" required/>
+        </div>
+        <div class="form-group">
+            <label for="exampleInputPrenom">Prénom : <em class="dxeRequiredMark_Glass">*</em></label>
+          <input type="text"  class="form-control" placeholder="Veuillez saisir votre Prénom" ngModel name="prenom" required/>
+        </div>
+        
+          <div>
+              <label class="espace" for="bday">Veuillez saisir votre date de Naissance : <em class="dxeRequiredMark_Glass">*</em></label><br>
+            <input type="date"  class="form-control"    ngModel name="datenaissance" required />
+          </div>
+        
+        <div class="form-group">
+            <label class="espace" for="exampleInputCIN">CIN : <em class="dxeRequiredMark_Glass">*</em></label>
+            <input type="text"  class="form-control"  placeholder="Veuillez saisir votre CIN" ngModel name="cin" required/>
+          </div>
+          <div class="form-group">
+              <label class="espace" for="exampleInputEmail1">Adresse électronique : <em class="dxeRequiredMark_Glass">*</em></label>
+              <input type="email"  class="form-control"   placeholder="Veuillez saisir votre email" ngModel name="adressmail" required/>
+             
+            </div>
+          <div class="form-group">
+              <label class="espace" for="exampleInputRevenu">Revenu Annuel : <em class="dxeRequiredMark_Glass">*</em> </label>
+              <input type="text"  class="form-control"  placeholder="Veuillez saisir votre Revenu Annuel" ngModel name="revenuannuel" required/>
+            </div>
+            <button type="submit" routerLink="/citoyen-list" class="btn btn-primary navbar-right" style="margin-right: 2px">Annuler</button>
+        <button [disabled]="!f.valid" type="submit"   class="btn btn-success navbar-right" style="margin-right: 5px">Enregistrer</button>
+        
+      </form>
+
+
+    </div>
+  </div>
+
+
+
+
+
